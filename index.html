@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Data Science Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: #1D3557;
+            overflow-x: hidden;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 35%;
+            height: 100vh;
+            background: #7B3B8C;
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            z-index: 100;
+            border-right: 6px solid #D4AF37;
+        }
+
+        .profile-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: #FFF4E6;
+            border: 6px solid #E8B4BC;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .sidebar h1 {
+            font-family: 'Playfair Display', serif;
+            color: #FFF4E6;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+        }
+
+        .sidebar .tagline {
+            color: #E8B4BC;
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            font-weight: 300;
+        }
+
+        .nav-menu {
+            width: 100%;
+        }
+
+        .nav-menu a {
+            display: block;
+            color: #FFF4E6;
+            text-decoration: none;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            background: rgba(255, 244, 230, 0.1);
+            border: 2px solid #E8B4BC;
+            border-radius: 8px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .nav-menu a:hover {
+            background: #E8B4BC;
+            color: #1D3557;
+            transform: translateX(5px);
+        }
+
+        .social-links {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .social-links a {
+            color: #A8DADC;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #F2A490;
+        }
+
+        .content {
+            margin-left: 35%;
+            width: 65%;
+            background: #FFF4E6;
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 4rem 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: #7B3B8C;
+            margin-bottom: 1rem;
+            border-bottom: 4px solid #D4AF37;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        #home {
+            background: #E8B4BC;
+            text-align: center;
+        }
+
+        #home h2 {
+            font-size: 4rem;
+            color: #1D3557;
+            border: none;
+        }
+
+        #home p {
+            font-size: 1.3rem;
+            color: #457B9D;
+            max-width: 600px;
+            margin: 2rem auto;
+            line-height: 1.8;
+        }
+
+        #about {
+            background: #FFF4E6;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: #457B9D;
+        }
+
+        .skills-list {
+            list-style: none;
+        }
+
+        .skill-item {
+            background: white;
+            padding: 1rem 1.5rem;
+            margin: 0.5rem 0;
+            border-left: 5px solid #7B3B8C;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .skill-item:hover {
+            transform: translateX(10px);
+            border-left-color: #F2A490;
+        }
+
+        .skill-item strong {
+            color: #8B1E3F;
+            font-size: 1.1rem;
+        }
+
+        #projects {
+            background: white;
+        }
+
+        .project {
+            background: #FFF4E6;
+            border: 3px solid #457B9D;
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem 0;
+            transition: all 0.3s;
+        }
+
+        .project:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(123, 59, 140, 0.2);
+        }
+
+        .project-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-icon {
+            font-size: 2.5rem;
+            background: #A8DADC;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid #7B3B8C;
+        }
+
+        .project h3 {
+            font-family: 'Playfair Display', serif;
+            color: #8B1E3F;
+            font-size: 1.8rem;
+        }
+
+        .project p {
+            color: #457B9D;
+            line-height: 1.7;
+            margin: 1rem 0;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            background: #A8DADC;
+            color: #1D3557;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 2px solid #457B9D;
+            font-weight: 600;
+        }
+
+        #collaborations {
+            background: #F2A490;
+        }
+
+        .network-container {
+            background: white;
+            border: 4px solid #7B3B8C;
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem 0;
+            min-height: 600px;
+        }
+
+        #collaboration-network {
+            width: 100%;
+            height: 600px;
+            border: 2px solid #457B9D;
+            border-radius: 8px;
+            background: #FFF4E6;
+        }
+
+        .legend {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .legend-circle {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid #1D3557;
+        }
+
+        #publications {
+            background: #FFF4E6;
+        }
+
+        .publication {
+            background: white;
+            border-left: 6px solid #7B3B8C;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+        }
+
+        .publication:hover {
+            border-left-color: #F2A490;
+            transform: translateX(10px);
+        }
+
+        .publication h4 {
+            font-family: 'Playfair Display', serif;
+            color: #457B9D;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .publication .authors {
+            color: #8B1E3F;
+            font-style: italic;
+            margin: 0.5rem 0;
+        }
+
+        .publication .journal {
+            color: #7B3B8C;
+            font-weight: 600;
+            margin: 0.5rem 0;
+        }
+
+        .publication .summary {
+            color: #457B9D;
+            line-height: 1.7;
+            margin-top: 1rem;
+        }
+
+        #contact {
+            background: #457B9D;
+            text-align: center;
+            color: white;
+        }
+
+        #contact h2 {
+            color: #FFF4E6;
+            border-bottom-color: #D4AF37;
+        }
+
+        #contact p {
+            font-size: 1.2rem;
+            color: #E8B4BC;
+            margin: 2rem 0;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
+            background: #E8B4BC;
+            color: #1D3557;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            border: 3px solid #FFF4E6;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+        }
+
+        .contact-btn:hover {
+            background: #FFF4E6;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        @media (max-width: 1024px) {
+            .sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+                min-height: 100vh;
+            }
+
+            .content {
+                margin-left: 0;
+                width: 100%;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 3rem 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sidebar h1 {
+                font-size: 2rem;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+
+            .profile-photo {
+                width: 150px;
+                height: 150px;
+                font-size: 3rem;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="profile-photo">👤</div>
+        <h1>Your Name</h1>
+        <p class="tagline">Data Science • Bioinformatics • Genomics</p>
+        
+        <nav class="nav-menu">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#collaborations">Collaborations</a>
+            <a href="#publications">Publications</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="social-links">
+            <a href="https://github.com/yourusername" title="GitHub">💻</a>
+            <a href="https://linkedin.com/in/yourprofile" title="LinkedIn">💼</a>
+            <a href="https://scholar.google.com/citations?user=YOLDb0UAAAAJ&hl=en" title="Google Scholar">🎓</a>
+            <a href="mailto:your.email@domain.com" title="Email">📧</a>
+        </div>
+    </div>
+
+    <div class="content">
+        <section id="home">
+            <h2>Welcome to My Laboratory</h2>
+            <p>I'm a data scientist specializing in bioinformatics and genomics, passionate about using computational approaches to unlock insights from complex biological systems.</p>
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Hello! I'm a computational biologist with a focus on genomic data analysis and machine learning applications in biology. My work bridges the gap between vast biological datasets and actionable insights that drive research forward.
+                    </p>
+                    <p>
+                        With expertise spanning from RNA-seq analysis to developing predictive models for disease outcomes, I thrive on collaborative projects that push the boundaries of what's possible with biological data.
+                    </p>
+                    <p>
+                        I believe in open science, reproducible research, and the power of interdisciplinary collaboration to solve complex biological questions.
+                    </p>
+                </div>
+                <div class="skills-section">
+                    <h3 style="color: #7B3B8C; font-family: 'Playfair Display', serif; margin-bottom: 1rem;">Technical Skills</h3>
+                    <ul class="skills-list">
+                        <li class="skill-item"><strong>Programming:</strong> Python, R, Bash</li>
+                        <li class="skill-item"><strong>Bioinformatics:</strong> RNA-seq, WGS, GWAS</li>
+                        <li class="skill-item"><strong>Machine Learning:</strong> scikit-learn, TensorFlow, PyTorch</li>
+                        <li class="skill-item"><strong>Data Viz:</strong> ggplot2, Plotly, Seaborn</li>
+                        <li class="skill-item"><strong>Tools:</strong> Docker, Git, Nextflow, Snakemake</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Recent Work</h2>
+            
+            <div class="project">
+                <div class="project-header">
+                    <div class="project-icon">🧬</div>
+                    <h3>Genomic Variant Analysis Pipeline</h3>
+                </div>
+                <p>
+                    Developed a comprehensive pipeline for analyzing whole-genome sequencing data to identify disease-associated variants. The pipeline integrates quality control, variant calling, annotation, and prioritization steps, processing terabytes of data efficiently.
+                </p>
+                <div class="project-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Nextflow</span>
+                    <span class="tag">WGS</span>
+                    <span class="tag">Cloud Computing</span>
+                </div>
+            </div>
+
+            <div class="project">
+                <div class="project-header">
+                    <div class="project-icon">📊</div>
+                    <h3>Machine Learning for Disease Prediction</h3>
+                </div>
+                <p>
+                    Built predictive models using multi-omics data to forecast disease outcomes. Implemented feature selection techniques and ensemble methods, achieving 85% accuracy in cross-validation studies across multiple cohorts.
+                </p>
+                <div class="project-tags">
+                    <span class="tag">Machine Learning</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">R</span>
+                    <span class="tag">Multi-omics</span>
+                </div>
+            </div>
+
+            <div class="project">
+                <div class="project-header">
+                    <div class="project-icon">🔬</div>
+                    <h3>Single-Cell RNA-seq Analysis</h3>
+                </div>
+                <p>
+                    Analyzed single-cell transcriptomic data to identify novel cell types and characterize cellular heterogeneity in disease states. Developed visualization tools for exploring high-dimensional data and identifying marker genes.
+                </p>
+                <div class="project-tags">
+                    <span class="tag">scRNA-seq</span>
+                    <span class="tag">R</span>
+                    <span class="tag">Seurat</span>
+                    <span class="tag">Data Visualization</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="collaborations">
+            <h2>Collaboration Network</h2>
+            <div class="network-container">
+                <canvas id="collaboration-network"></canvas>
+                <div class="legend">
+                    <div class="legend-item">
+                        <div class="legend-circle" style="background: #7B3B8C;"></div>
+                        <span>You</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-circle" style="background: #457B9D;"></div>
+                        <span>Frequent Collaborators (5+ papers)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-circle" style="background: #A8DADC;"></div>
+                        <span>Regular Collaborators (2-4 papers)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-circle" style="background: #E8B4BC;"></div>
+                        <span>Single Collaboration</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="publications">
+            <h2>Publications</h2>
+            
+            <div class="publication">
+                <h4>Novel Computational Approaches for Genomic Data Integration</h4>
+                <p class="authors">Your Name, Co-author A, Co-author B, et al.</p>
+                <p class="journal">Nature Computational Biology • 2024 • DOI: 10.1038/xxxxx</p>
+                <p class="summary">
+                    This study presents a new framework for integrating heterogeneous genomic datasets, demonstrating improved accuracy in variant effect prediction and disease risk assessment across multiple populations.
+                </p>
+            </div>
+
+            <div class="publication">
+                <h4>Machine Learning Models for Precision Oncology</h4>
+                <p class="authors">Lead Author, Your Name, Co-author C, et al.</p>
+                <p class="journal">Cell Systems • 2024 • DOI: 10.1016/xxxxx</p>
+                <p class="summary">
+                    We developed machine learning models that predict treatment response in cancer patients using multi-omics data, achieving significant improvements over traditional clinical markers.
+                </p>
+            </div>
+
+            <div class="publication">
+                <h4>Single-Cell Atlas of Disease Progression</h4>
+                <p class="authors">Your Name, Collaborator Names, et al.</p>
+                <p class="journal">Science • 2023 • DOI: 10.1126/xxxxx</p>
+                <p class="summary">
+                    A comprehensive single-cell transcriptomic analysis revealing cellular dynamics during disease progression, identifying novel therapeutic targets and biomarkers.
+                </p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Let's Connect</h2>
+            <p>I'm always interested in new collaborations, research opportunities, and interesting discussions about data science and genomics.</p>
+            <div class="contact-buttons">
+                <a href="mailto:your.email@domain.com" class="contact-btn">📧 Email Me</a>
+                <a href="https://github.com/yourusername" class="contact-btn">💻 GitHub</a>
+                <a href="https://linkedin.com/in/yourprofile" class="contact-btn">💼 LinkedIn</a>
+                <a href="https://scholar.google.com/citations?user=YOLDb0UAAAAJ&hl=en" class="contact-btn">🎓 Google Scholar</a>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        const publications = [
+            {authors: "Scharre, Marvin; Gonçalves, Mateus; Pedersen, Tiffany; Balakumaran-Gustavsen, Gabrielle; Lang, Henli; Chin, Elise; Hui; Balcom, Pamela; Mordaunt, Ali; Torrez; Kastrati"},
+            {authors: "Balakumaran-Gustavsen, Gabrielle; Lang, Henli; Tindall, Brendan; Gustavsen, Gabrielle; Pedersen, Tiffany; Scharre, Marvin; Mordaunt, Ali"},
+            {authors: "Scharre, Marvin; Pedersen, Tiffany; Williams, Pearl; Lang, Henli; Gustavsen, Gabrielle; Mordaunt, Ali"},
+            {authors: "Balakumaran-Gustavsen, Gabrielle; Marron, Anna; Cords, Veronique"},
+            {authors: "Brown, Natasha; Karamanti, Mamatha; Gustavsen, Gabrielle; Mordaunt, Ali"},
+            {authors: "Burbulock, Elizabeth; Perrio, Kacie; Cords, Veronique; Balakumaran-Gustavsen, Gabrielle; Mordaunt, Ali"},
+            {authors: "Vermunt, M; Balakumaran-Gustavsen, G; Brosco, R; Williams, M; Troch, G"},
+            {authors: "Carvalho, Débora; Biscione, Nuno; Balakumaran-Gustavsen, Gabrielle; Mordaunt, Ali"}
+        ];
+
+        const collaborations = {};
+        const yourName = "Mordaunt";
+        
+        publications.forEach(pub => {
+            const authors = pub.authors.split(/[;,]/).map(a => a.trim()).filter(a => a.length > 0);
+            authors.forEach(author => {
+                if (!author.includes(yourName)) {
+                    const lastName = author.split(' ').pop();
+                    if (lastName && lastName.length > 2) {
+                        collaborations[lastName] = (collaborations[lastName] || 0) + 1;
+                    }
+                }
+            });
+        });
+
+        const canvas = document.getElementById('collaboration-network');
+        const ctx = canvas.getContext('2d');
+        
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
+        
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+        
+        const sortedCollabs = Object.entries(collaborations)
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 30);
+        
+        const nodes = [
+            { name: yourName, x: centerX, y: centerY, count: 0, isCenter: true }
+        ];
+        
+        sortedCollabs.forEach((collab, i) => {
+            const angle = (i / sortedCollabs.length) * 2 * Math.PI;
+            const distance = 150 + (10 - Math.min(collab[1], 10)) * 15;
+            nodes.push({
+                name: collab[0],
+                x: centerX + Math.cos(angle) * distance,
+                y: centerY + Math.sin(angle) * distance,
+                count: collab[1],
+                isCenter: false
+            });
+        });
+        
+        function getColor(count) {
+            if (count >= 5) return '#457B9D';
+            if (count >= 2) return '#A8DADC';
+            return '#E8B4BC';
+        }
+        
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            ctx.strokeStyle = 'rgba(123, 59, 140, 0.2)';
+            ctx.lineWidth = 1;
+            nodes.forEach((node, i) => {
+                if (i > 0) {
+                    ctx.beginPath();
+                    ctx.moveTo(nodes[0].x, nodes[0].y);
+                    ctx.lineTo(node.x, node.y);
+                    ctx.stroke();
+                }
+            });
+            
+            nodes.forEach(node => {
+                const radius = node.isCenter ? 30 : (10 + Math.min(node.count, 5) * 2);
+                
+                ctx.fillStyle = node.isCenter ? '#7B3B8C' : getColor(node.count);
+                ctx.beginPath();
+                ctx.arc(node.x, node.y, radius, 0, 2 * Math.PI);
+                ctx.fill();
+                
+                ctx.strokeStyle = '#1D3557';
+                ctx.lineWidth = 2;
+                ctx.stroke();
+                
+                ctx.fillStyle = '#1D3557';
+                ctx.font = node.isCenter ? 'bold 14px Lato' : '11px Lato';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                
+                if (node.isCenter) {
+                    ctx.fillStyle = 'white';
+                    ctx.fillText('You', node.x, node.y);
+                } else {
+                    ctx.fillText(node.name, node.x, node.y + radius + 12);
+                    ctx.font = '9px Lato';
+                    ctx.fillStyle = '#8B1E3F';
+                    ctx.fillText(`(${node.count})`, node.x, node.y + radius + 24);
+                }
+            });
+        }
+        
+        let hoveredNode = null;
+        
+        canvas.addEventListener('mousemove', (e) => {
+            const rect = canvas.getBoundingClientRect();
+            const mouseX = e.clientX - rect.left;
+            const mouseY = e.clientY - rect.top;
+            
+            hoveredNode = nodes.find(node => {
+                const radius = node.isCenter ? 30 : (10 + Math.min(node.count, 5) * 2);
+                const dist = Math.sqrt((mouseX - node.x) ** 2 + (mouseY - node.y) ** 2);
+                return dist <= radius;
+            });
+            
+            canvas.style.cursor = hoveredNode ? 'pointer' : 'default';
+            
+            draw();
+            
+            if (hoveredNode && !hoveredNode.isCenter) {
+                ctx.strokeStyle = '#D4AF37';
+                ctx.lineWidth = 3;
+                ctx.beginPath();
+                ctx.moveTo(nodes[0].x, nodes[0].y);
+                ctx.lineTo(hoveredNode.x, hoveredNode.y);
+                ctx.stroke();
+                
+                ctx.fillStyle = 'white';
+                ctx.strokeStyle = '#7B3B8C';
+                ctx.lineWidth = 2;
+                const tooltipX = hoveredNode.x;
+                const tooltipY = hoveredNode.y - 50;
+                ctx.fillRect(tooltipX - 60, tooltipY - 20, 120, 35);
+                ctx.strokeRect(tooltipX - 60, tooltipY - 20, 120, 35);
+                
+                ctx.fillStyle = '#1D3557';
+                ctx.font = 'bold 12px Lato';
+                ctx.textAlign = 'center';
+                ctx.fillText(hoveredNode.name, tooltipX, tooltipY - 5);
+                ctx.font = '10px Lato';
+                ctx.fillText(`${hoveredNode.count} publications`, tooltipX, tooltipY + 10);
+            }
+        });
+        
+        draw();
+        
+        window.addEventListener('resize', () => {
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+            draw();
+        });
+    </script>
+</body>
+</html>
