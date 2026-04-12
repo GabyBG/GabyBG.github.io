@@ -3,53 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Gabriela Balderrama-Gutierrez | Scientific Strategy</title>
+    <title>Dr. Gabriela Balderrama-Gutierrez | Scientific Strategy & Medical Affairs</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     
     <style>
         :root {
-            --bg: #fdfdfd;
-            --primary: #1a2a6c; /* Deep Professional Navy */
-            --accent: #b8926a;  /* Sophisticated Gold/Bronze */
-            --text: #333;
-            --light-text: #707b7c;
+            --bg: #f8f9fa;
+            --primary: #1c2833; /* Deep Professional Navy */
+            --accent: #ca6f1e;  /* Scientific Bronze */
+            --text: #34495e;
+            --white: #ffffff;
         }
 
-        body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); margin: 0; scroll-behavior: smooth; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; scroll-behavior: smooth; }
         .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-        
+        a { text-decoration: none; transition: 0.3s; color: inherit; }
+
         /* NAVIGATION */
-        nav { padding: 20px 0; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; background: rgba(253, 253, 253, 0.9); z-index: 1000; }
-        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--primary); }
-        .nav-links a { margin-left: 25px; text-decoration: none; color: var(--text); font-weight: 500; font-size: 0.9rem; transition: 0.3s; }
+        nav { padding: 20px 0; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; background: rgba(248, 249, 250, 0.9); z-index: 1000; border-bottom: 1px solid #ddd; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--primary); font-weight: 700; }
+        .nav-links a { margin-left: 25px; font-weight: 500; font-size: 0.9rem; }
         .nav-links a:hover { color: var(--accent); }
 
         /* HERO SECTION */
-        .hero { display: flex; align-items: center; min-height: 80vh; gap: 50px; padding: 50px 0; }
-        .hero-text { flex: 1; }
-        .hero-text h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin: 0; color: var(--primary); }
-        .hero-text p { font-size: 1.1rem; color: var(--light-text); margin: 20px 0 30px; line-height: 1.8; }
-        .hero-img { flex: 1; text-align: right; }
-        .hero-img img { width: 100%; max-width: 450px; border-radius: 100px 20px 100px 20px; border: 10px solid #fff; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-
-        /* PUBLICATIONS SECTION */
-        .section-title { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--primary); text-align: center; margin-bottom: 50px; }
-        .pub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .pub-card { background: white; padding: 30px; border-radius: 15px; border-left: 5px solid var(--accent); box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; }
-        .pub-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
-        .pub-tag { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); font-weight: 700; }
-        .pub-title { font-size: 1.1rem; font-weight: 600; margin: 10px 0; color: var(--primary); }
-        .pub-link { display: inline-flex; align-items: center; margin-top: 15px; color: var(--primary); font-weight: 600; text-decoration: none; border-bottom: 2px solid var(--accent); }
-        .pub-link i { margin-left: 5px; }
-
+        .hero { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 80px 0; min-height: 80vh; justify-content: center; }
+        .hero-img { 
+            width: 280px; height: 280px; object-fit: cover; 
+            border-radius: 50%; border: 8px solid var(--white); 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1); margin-bottom: 30px; 
+        }
+        .hero-tag { color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; margin-bottom: 10px; display: block; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: var(--primary); margin-bottom: 20px; line-height: 1.2; }
+        .hero p { max-width: 800px; font-size: 1.1rem; color: #566573; margin-bottom: 35px; }
+        
         /* BUTTONS */
-        .btn { padding: 12px 30px; background: var(--primary); color: white; border-radius: 50px; text-decoration: none; font-weight: 600; transition: 0.3s; display: inline-block; }
-        .btn:hover { background: var(--accent); }
+        .btn { padding: 12px 35px; background: var(--primary); color: white; border-radius: 50px; font-weight: 600; display: inline-block; }
+        .btn:hover { background: var(--accent); transform: translateY(-2px); }
+        .btn-ghost { background: transparent; border: 2px solid var(--primary); color: var(--primary); margin-left: 15px; }
 
-        footer { background: var(--primary); color: white; padding: 60px 0; text-align: center; margin-top: 100px; }
+        /* PUBLICATIONS GRID */
+        .section { padding: 80px 0; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: 2.5rem; text-align: center; margin-bottom: 50px; color: var(--primary); }
+        .pub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .pub-card { background: var(--white); padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; position: relative; overflow: hidden; }
+        .pub-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .pub-card::before { content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 5px; background: var(--accent); }
+        .pub-card h3 { font-size: 1.1rem; margin-bottom: 10px; color: var(--primary); }
+        .pub-meta { font-size: 0.85rem; color: var(--accent); font-weight: 600; margin-bottom: 15px; display: block; }
+        .pub-link { font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; color: var(--primary); margin-top: 20px; }
+        .pub-link i { margin-left: 5px; font-size: 1.2rem; }
 
-        @media (max-width: 768px) { .hero { flex-direction: column; text-align: center; } .hero-text h1 { font-size: 2.5rem; } }
+        /* FOOTER */
+        footer { padding: 60px 0; background: var(--primary); color: white; text-align: center; }
+        .social-links a { font-size: 1.8rem; margin: 0 15px; color: white; opacity: 0.8; }
+        .social-links a:hover { opacity: 1; color: var(--accent); }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero-img { width: 220px; height: 220px; }
+        }
     </style>
 </head>
 <body>
@@ -60,46 +75,44 @@
         <div class="nav-links">
             <a href="#about">About</a>
             <a href="#publications">Publications</a>
-            <a href="#resources">Resources</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
 
-    <section class="hero">
-        <div class="hero-text">
-            <span style="color: var(--accent); font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">Scientific Strategy Leader</span>
-            <h1>Turning Genomic Data into Clinical Success.</h1>
-            <p>I am a scientist at the intersection of <b>CAR T-cell therapy</b> and <b>GenAI</b>. I lead the translation of complex multi-omics data into insights that guide therapeutic decisions and patient outcomes.</p>
-            <a href="#publications" class="btn">View My Papers</a>
-        </div>
-        <div class="hero-img">
-            <img src="portrait.jpg" alt="Gabriela Balderrama-Gutierrez">
+    <section class="hero" id="about">
+        <img src="portrait.jpg" alt="Gabriela Balderrama-Gutierrez" class="hero-img">
+        <span class="hero-tag">Scientific Strategy | Medical Affairs</span>
+        <h1>Bridging Biology & Strategy.</h1>
+        <p>I lead the translation of complex genomic data into actionable insights for <b>CAR T-cell therapy</b>. With 8+ years of experience in immuno-oncology and a passion for <b>GenAI innovation</b>, I help clinical teams turn data into decisions.</p>
+        <div class="hero-btns">
+            <a href="#publications" class="btn">View Publications</a>
+            <a href="mailto:g.balderrama@live.com" class="btn btn-ghost">Let's Connect</a>
         </div>
     </section>
 
-    <section class="publications section" id="publications">
-        <h2 class="section-title">Peer-Reviewed Publications</h2>
+    <section class="section" id="publications">
+        <h2 class="section-title">Peer-Reviewed Papers</h2>
         <div class="pub-grid">
             
             <div class="pub-card">
-                <span class="pub-tag">Clinical Impact</span>
-                <div class="pub-title">Ibrutinib exposure correlates with improved efficacy of CAR T cells in mantle cell lymphoma.</div>
-                <p style="font-size: 0.9rem; color: var(--light-text);">Blood Advances (2026)</p>
-                <a href="path/to/your/paper1.pdf" target="_blank" class="pub-link">Read Full PDF <i class='bx bx-right-arrow-alt'></i></a>
+                <span class="pub-meta">Blood Advances (2026)</span>
+                <h3>Ibrutinib exposure correlates with improved efficacy of CAR T cells in mantle cell lymphoma.</h3>
+                <p>Strategic analysis of product biology and patient outcomes.</p>
+                <a href="blood_advances_2026.pdf" target="_blank" class="pub-link">Read PDF <i class='bx bx-right-arrow-alt'></i></a>
             </div>
 
             <div class="pub-card">
-                <span class="pub-tag">Methodology</span>
-                <div class="pub-title">Systematic assessment of long-read RNA-seq methods for transcript identification.</div>
-                <p style="font-size: 0.9rem; color: var(--light-text);">Nature Methods (2024)</p>
-                <a href="https://doi.org/10.1038/s41592-024-02298-y" target="_blank" class="pub-link">Journal Link <i class='bx bx-link-external'></i></a>
+                <span class="pub-meta">Nature Methods (2024)</span>
+                <h3>Systematic assessment of long-read RNA-seq methods for transcript identification.</h3>
+                <p>Benchmarking methodologies for high-dimensional transcriptomics.</p>
+                <a href="nature_methods_2024.pdf" target="_blank" class="pub-link">Read PDF <i class='bx bx-right-arrow-alt'></i></a>
             </div>
 
             <div class="pub-card">
-                <span class="pub-tag">Oncology</span>
-                <div class="pub-title">Characterization of Axicabtagene Ciloleucel features associated with treatment resistance.</div>
-                <p style="font-size: 0.9rem; color: var(--light-text);">Blood (ASH) (2024)</p>
-                <a href="#" class="pub-link">Download PDF <i class='bx bx-download'></i></a>
+                <span class="pub-meta">Blood (ASH 2024)</span>
+                <h3>Characterization of axi-cel features associated with treatment resistance.</h3>
+                <p>Identifying clinical biomarkers in r/r LBCL patients.</p>
+                <a href="ash_2024_resistance.pdf" target="_blank" class="pub-link">Read PDF <i class='bx bx-right-arrow-alt'></i></a>
             </div>
 
         </div>
@@ -107,10 +120,12 @@
 </div>
 
 <footer>
-    <p>&copy; 2026 Dr. Gabriela Balderrama-Gutierrez</p>
-    <div style="font-size: 1.5rem; margin-top: 20px;">
-        <a href="#" style="color: white; margin: 0 15px;"><i class='bx bxl-linkedin'></i></a>
-        <a href="#" style="color: white; margin: 0 15px;"><i class='bx bxl-google'></i></a>
+    <div class="container">
+        <p style="margin-bottom: 20px;">© 2026 Dr. Gabriela Balderrama-Gutierrez</p>
+        <div class="social-links">
+            <a href="https://linkedin.com/in/gbalderrama" target="_blank"><i class='bx bxl-linkedin-square'></i></a>
+            <a href="https://scholar.google.com/citations?user=YOLDb0UAAAAJ" target="_blank"><i class='bx bxl-google'></i></a>
+        </div>
     </div>
 </footer>
 
