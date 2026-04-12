@@ -3,151 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Gabriela Balderrama-Gutierrez | Scientific Strategy & Medical Affairs</title>
-    <link href="https://fonts.googleapis.com/css2?family=Helvetica:wght@300;400;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>Dr. Gabriela Balderrama-Gutierrez | Scientific Strategy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     
     <style>
         :root {
-            --first-color: #2c3e50; /* Deep Navy - Professional */
-            --title-color: #34495e;
-            --text-color: #5d6d7e;
-            --accent-color: #3498db; /* Kite/Gilead Blue */
-            --body-color: #f8f9fa;
-            --container-color: #ffffff;
+            --bg: #fdfdfd;
+            --primary: #1a2a6c; /* Deep Professional Navy */
+            --accent: #b8926a;  /* Sophisticated Gold/Bronze */
+            --text: #333;
+            --light-text: #707b7c;
         }
 
-        * { box-sizing: border-box; padding: 0; margin: 0; }
-        body { font-family: 'Poppins', sans-serif; background-color: var(--body-color); color: var(--text-color); line-height: 1.6; }
-        a { text-decoration: none; transition: .3s; }
-        ul { list-style: none; }
+        body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); margin: 0; scroll-behavior: smooth; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        
+        /* NAVIGATION */
+        nav { padding: 20px 0; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; background: rgba(253, 253, 253, 0.9); z-index: 1000; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--primary); }
+        .nav-links a { margin-left: 25px; text-decoration: none; color: var(--text); font-weight: 500; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a:hover { color: var(--accent); }
 
-        /* REUSABLE CLASSES */
-        .container { max-width: 1024px; margin: 0 auto; padding: 0 1.5rem; }
-        .section { padding: 4.5rem 0 2rem; }
-        .section__title { font-size: 2rem; color: var(--first-color); text-align: center; margin-bottom: 1rem; }
-        .section__subtitle { display: block; text-align: center; font-size: 0.9rem; margin-bottom: 3rem; color: var(--accent-color); font-weight: 600; }
+        /* HERO SECTION */
+        .hero { display: flex; align-items: center; min-height: 80vh; gap: 50px; padding: 50px 0; }
+        .hero-text { flex: 1; }
+        .hero-text h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin: 0; color: var(--primary); }
+        .hero-text p { font-size: 1.1rem; color: var(--light-text); margin: 20px 0 30px; line-height: 1.8; }
+        .hero-img { flex: 1; text-align: right; }
+        .hero-img img { width: 100%; max-width: 450px; border-radius: 100px 20px 100px 20px; border: 10px solid #fff; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
 
-        /* HEADER */
-        header { width: 100%; background: var(--container-color); position: fixed; top: 0; z-index: 100; box-shadow: 0 1px 4px rgba(0,0,0,.1); }
-        nav { height: 3.5rem; display: flex; justify-content: space-between; align-items: center; }
-        .nav__logo { color: var(--first-color); font-weight: 700; font-size: 1.2rem; }
-        .nav__list { display: flex; column-gap: 2rem; }
-        .nav__link { color: var(--title-color); font-size: 0.9rem; }
+        /* PUBLICATIONS SECTION */
+        .section-title { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--primary); text-align: center; margin-bottom: 50px; }
+        .pub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .pub-card { background: white; padding: 30px; border-radius: 15px; border-left: 5px solid var(--accent); box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; }
+        .pub-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
+        .pub-tag { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); font-weight: 700; }
+        .pub-title { font-size: 1.1rem; font-weight: 600; margin: 10px 0; color: var(--primary); }
+        .pub-link { display: inline-flex; align-items: center; margin-top: 15px; color: var(--primary); font-weight: 600; text-decoration: none; border-bottom: 2px solid var(--accent); }
+        .pub-link i { margin-left: 5px; }
 
-        /* HOME */
-        .home__container { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 2rem; padding-top: 5rem; }
-        .home__greeting { color: var(--accent-color); font-weight: 600; }
-        .home__name { font-size: 3rem; color: var(--first-color); line-height: 1.2; margin: 0.5rem 0; }
-        .home__education { font-size: 1.2rem; margin-bottom: 1.5rem; color: var(--title-color); }
-        .home__img { width: 100%; border-radius: 20px; box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff; }
-        .button { display: inline-block; background-color: var(--accent-color); color: #fff; padding: 1rem 1.75rem; border-radius: .5rem; font-weight: 600; }
-        .button--ghost { background: transparent; border: 2px solid var(--accent-color); color: var(--accent-color); margin-left: 1rem; }
+        /* BUTTONS */
+        .btn { padding: 12px 30px; background: var(--primary); color: white; border-radius: 50px; text-decoration: none; font-weight: 600; transition: 0.3s; display: inline-block; }
+        .btn:hover { background: var(--accent); }
 
-        /* PILLARS / SERVICES */
-        .services__container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-        .services__card { background: var(--container-color); padding: 3rem 1.5rem; border-radius: 1rem; text-align: center; transition: .4s; border-bottom: 4px solid transparent; }
-        .services__card:hover { border-bottom: 4px solid var(--accent-color); transform: translateY(-10px); }
-        .services__icon { font-size: 2.5rem; color: var(--accent-color); margin-bottom: 1rem; }
-        .services__title { font-size: 1.25rem; color: var(--first-color); margin-bottom: 1rem; }
+        footer { background: var(--primary); color: white; padding: 60px 0; text-align: center; margin-top: 100px; }
 
-        /* EXPERIENCE / WORK */
-        .work__card { background: var(--container-color); padding: 1.5rem; border-radius: 1rem; margin-bottom: 2rem; }
-        .work__title { color: var(--accent-color); font-weight: 700; }
-        .work__date { font-size: 0.8rem; font-style: italic; margin-bottom: 1rem; display: block; }
-
-        /* FOOTER */
-        footer { text-align: center; padding: 3rem 0; background: var(--first-color); color: #fff; margin-top: 4rem; }
-
-        /* RESPONSIVE */
-        @media screen and (max-width: 768px) {
-            .home__container, .services__container { grid-template-columns: 1fr; }
-            .nav__list { display: none; } /* Simplified for mobile */
-        }
+        @media (max-width: 768px) { .hero { flex-direction: column; text-align: center; } .hero-text h1 { font-size: 2.5rem; } }
     </style>
 </head>
 <body>
 
-    <header>
-        <nav class="container">
-            <a href="#" class="nav__logo">DR. BALDERRAMA</a>
-            <ul class="nav__list">
-                <li><a href="#home" class="nav__link">Home</a></li>
-                <li><a href="#services" class="nav__link">Strategy</a></li>
-                <li><a href="#work" class="nav__link">Experience</a></li>
-                <li><a href="#contact" class="nav__link">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section class="home section" id="home">
-            <div class="home__container container">
-                <div class="home__data">
-                    <span class="home__greeting">Scientific Strategy & Medical Affairs</span>
-                    <h1 class="home__name">Gabriela Balderrama-Gutierrez, PhD</h1>
-                    <h3 class="home__education">Bridging Multi-Omics and Clinical Outcomes</h3>
-                    <p>Strategic scientist and GenAI evangelist with 8+ years in CAR T therapy. I translate complex genomic data into actionable insights for clinical and regulatory leadership.</p>
-                    <br>
-                    <div class="home__buttons">
-                        <a href="#contact" class="button">Contact Me</a>
-                        <a href="#" class="button button--ghost">View CV</a>
-                    </div>
-                </div>
-                <div class="home__img-div">
-                    <img src="landscape_photo.png" alt="Gabriela Balderrama-Gutierrez" class="home__img">
-                </div>
-            </div>
-        </section>
-
-        <section class="services section" id="services">
-            <h2 class="section__title">Strategic Pillars</h2>
-            <span class="section__subtitle">Expertise for Leadership Roles</span>
-            <div class="services__container container">
-                <div class="services__card">
-                    <i class='bx bx-brain services__icon'></i>
-                    <h3 class="services__title">Scientific <br> Communication</h3>
-                    <p>Making high-dimensional NGS data accessible to HCPs and cross-functional teams.</p>
-                </div>
-                <div class="services__card">
-                    <i class='bx bx-dna services__icon'></i>
-                    <h3 class="services__title">Medical <br> Strategy</h3>
-                    <p>Linking product biology to clinical response to drive therapeutic roadmap decisions.</p>
-                </div>
-                <div class="services__card">
-                    <i class='bx bx-bot services__icon'></i>
-                    <h3 class="services__title">GenAI <br> Evangelism</h3>
-                    <p>Leading the adoption of AI tools to optimize discovery research and clinical workflows.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="work section" id="work">
-            <h2 class="section__title">Professional Highlights</h2>
-            <span class="section__subtitle">Leading at the Crossroads of Science & Data</span>
-            <div class="container">
-                <div class="work__card">
-                    <h3 class="work__title">Kite Pharma (Gilead) | Sr. Research Scientist</h3>
-                    <span class="work__date">2021 — Present</span>
-                    <p>Acting as the scientific bridge between computational teams and clinical partners. Lead contributor to studies on CAR T efficacy (Blood Advances, 2026) and institutional lead for Benchling LIMS rollout.</p>
-                </div>
-                <div class="work__card">
-                    <h3 class="work__title">UC Irvine | PhD Researcher & Teaching Fellow</h3>
-                    <span class="work__date">2017 — 2021</span>
-                    <p>Bioinformatics lead for the international ENCODE consortium. Managed multi-omics collaborations across four labs and taught Precision Medicine applications to clinical students.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>Gabriela Balderrama-Gutierrez, PhD</p>
-        <p>Southern California | g.balderrama@live.com</p>
-        <div style="margin-top: 1rem;">
-            <a href="#" style="color: #fff; font-size: 1.5rem; margin: 0 10px;"><i class='bx bxl-linkedin'></i></a>
-            <a href="#" style="color: #fff; font-size: 1.5rem; margin: 0 10px;"><i class='bx bxl-google'></i></a>
+<div class="container">
+    <nav>
+        <div class="logo">G. Balderrama-Gutierrez</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#publications">Publications</a>
+            <a href="#resources">Resources</a>
+            <a href="#contact">Contact</a>
         </div>
-    </footer>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-text">
+            <span style="color: var(--accent); font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">Scientific Strategy Leader</span>
+            <h1>Turning Genomic Data into Clinical Success.</h1>
+            <p>I am a scientist at the intersection of <b>CAR T-cell therapy</b> and <b>GenAI</b>. I lead the translation of complex multi-omics data into insights that guide therapeutic decisions and patient outcomes.</p>
+            <a href="#publications" class="btn">View My Papers</a>
+        </div>
+        <div class="hero-img">
+            <img src="portrait_landscape.pdf" alt="Gabriela Balderrama-Gutierrez">
+        </div>
+    </section>
+
+    <section class="publications section" id="publications">
+        <h2 class="section-title">Peer-Reviewed Publications</h2>
+        <div class="pub-grid">
+            
+            <div class="pub-card">
+                <span class="pub-tag">Clinical Impact</span>
+                <div class="pub-title">Ibrutinib exposure correlates with improved efficacy of CAR T cells in mantle cell lymphoma.</div>
+                <p style="font-size: 0.9rem; color: var(--light-text);">Blood Advances (2026)</p>
+                <a href="path/to/your/paper1.pdf" target="_blank" class="pub-link">Read Full PDF <i class='bx bx-right-arrow-alt'></i></a>
+            </div>
+
+            <div class="pub-card">
+                <span class="pub-tag">Methodology</span>
+                <div class="pub-title">Systematic assessment of long-read RNA-seq methods for transcript identification.</div>
+                <p style="font-size: 0.9rem; color: var(--light-text);">Nature Methods (2024)</p>
+                <a href="https://doi.org/10.1038/s41592-024-02298-y" target="_blank" class="pub-link">Journal Link <i class='bx bx-link-external'></i></a>
+            </div>
+
+            <div class="pub-card">
+                <span class="pub-tag">Oncology</span>
+                <div class="pub-title">Characterization of Axicabtagene Ciloleucel features associated with treatment resistance.</div>
+                <p style="font-size: 0.9rem; color: var(--light-text);">Blood (ASH) (2024)</p>
+                <a href="#" class="pub-link">Download PDF <i class='bx bx-download'></i></a>
+            </div>
+
+        </div>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2026 Dr. Gabriela Balderrama-Gutierrez</p>
+    <div style="font-size: 1.5rem; margin-top: 20px;">
+        <a href="#" style="color: white; margin: 0 15px;"><i class='bx bxl-linkedin'></i></a>
+        <a href="#" style="color: white; margin: 0 15px;"><i class='bx bxl-google'></i></a>
+    </div>
+</footer>
 
 </body>
 </html>
