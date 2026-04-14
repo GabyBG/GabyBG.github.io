@@ -1,133 +1,660 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Gabriela Balderrama-Gutierrez | Scientific Strategy & Medical Affairs</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-    
-    <style>
-        :root {
-            --bg: #f8f9fa;
-            --primary: #1c2833; /* Deep Professional Navy */
-            --accent: #ca6f1e;  /* Scientific Bronze */
-            --text: #34495e;
-            --white: #ffffff;
-        }
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gabriela Balderrama-Gutierrez, PhD | Bioinformatics & Medical Affairs</title>
+  <meta name="description" content="Portfolio of Dr. Gabriela Balderrama-Gutierrez — Sr. Research Scientist in Bioinformatics at Kite Pharma, ENCODE collaborator, MODEL-AD contributor, CAR-T expert, and GenAI advocate.">
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; scroll-behavior: smooth; }
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-        a { text-decoration: none; transition: 0.3s; color: inherit; }
+  <!-- Google Fonts: Cormorant Garamond (display) + Plus Jakarta Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-        /* NAVIGATION */
-        nav { padding: 20px 0; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; background: rgba(248, 249, 250, 0.9); z-index: 1000; border-bottom: 1px solid #ddd; }
-        .logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--primary); font-weight: 700; }
-        .nav-links a { margin-left: 25px; font-weight: 500; font-size: 0.9rem; }
-        .nav-links a:hover { color: var(--accent); }
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-        /* HERO SECTION */
-        .hero { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 80px 0; min-height: 80vh; justify-content: center; }
-        .hero-img { 
-            width: 280px; height: 280px; object-fit: cover; 
-            border-radius: 50%; border: 8px solid var(--white); 
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1); margin-bottom: 30px; 
-        }
-        .hero-tag { color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; margin-bottom: 10px; display: block; }
-        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: var(--primary); margin-bottom: 20px; line-height: 1.2; }
-        .hero p { max-width: 800px; font-size: 1.1rem; color: #566573; margin-bottom: 35px; }
-        
-        /* BUTTONS */
-        .btn { padding: 12px 35px; background: var(--primary); color: white; border-radius: 50px; font-weight: 600; display: inline-block; }
-        .btn:hover { background: var(--accent); transform: translateY(-2px); }
-        .btn-ghost { background: transparent; border: 2px solid var(--primary); color: var(--primary); margin-left: 15px; }
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-        /* PUBLICATIONS GRID */
-        .section { padding: 80px 0; }
-        .section-title { font-family: 'Playfair Display', serif; font-size: 2.5rem; text-align: center; margin-bottom: 50px; color: var(--primary); }
-        .pub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        .pub-card { background: var(--white); padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; position: relative; overflow: hidden; }
-        .pub-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-        .pub-card::before { content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 5px; background: var(--accent); }
-        .pub-card h3 { font-size: 1.1rem; margin-bottom: 10px; color: var(--primary); }
-        .pub-meta { font-size: 0.85rem; color: var(--accent); font-weight: 600; margin-bottom: 15px; display: block; }
-        .pub-link { font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; color: var(--primary); margin-top: 20px; }
-        .pub-link i { margin-left: 5px; font-size: 1.2rem; }
+    :root {
+      --clr-bg:            #faf8f5;
+      --clr-surface:       #f3ede8;
+      --clr-card:          #ffffff;
+      --clr-border:        #e4d9d0;
+      --clr-navy:          #1c2b3a;
+      --clr-accent:        #c96a8a;
+      --clr-accent-2:      #8b5e7e;
+      --clr-accent-light:  #f4dde5;
+      --clr-accent-text:   #7d2f4d;
+      --clr-text:          #2e2020;
+      --clr-muted:         #7a6e6e;
+      --clr-heading:       #1c2b3a;
+      --font-display:      'Cormorant Garamond', Georgia, serif;
+      --font-body:         'Plus Jakarta Sans', system-ui, sans-serif;
+      --radius:            14px;
+      --shadow:            0 4px 28px rgba(28,43,58,0.10);
+      --shadow-lg:         0 12px 48px rgba(28,43,58,0.14);
+      --transition:        0.3s ease;
+    }
 
-        /* FOOTER */
-        footer { padding: 60px 0; background: var(--primary); color: white; text-align: center; }
-        .social-links a { font-size: 1.8rem; margin: 0 15px; color: white; opacity: 0.8; }
-        .social-links a:hover { opacity: 1; color: var(--accent); }
+    html { scroll-behavior: smooth; }
+    body { background: var(--clr-bg); color: var(--clr-text); font-family: var(--font-body); font-size: 1rem; line-height: 1.75; }
+    a { color: var(--clr-accent); text-decoration: none; transition: color var(--transition); }
+    a:hover { color: var(--clr-accent-2); }
+    img { max-width: 100%; display: block; }
+    .container { width: 90%; max-width: 1160px; margin: 0 auto; }
+    section { padding: 88px 0; }
+    .divider { height: 1px; background: linear-gradient(to right, transparent, var(--clr-border), transparent); }
 
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .hero-img { width: 220px; height: 220px; }
-        }
-    </style>
+    /* NAV */
+    header {
+      position: fixed; top: 0; left: 0; right: 0;
+      background: rgba(250,248,245,0.90);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--clr-border);
+      z-index: 100; padding: 14px 0;
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: var(--font-display); font-size: 1.6rem; font-weight: 600; color: var(--clr-navy); }
+    .logo span { color: var(--clr-accent); }
+    nav ul { list-style: none; display: flex; gap: 30px; }
+    nav a { color: var(--clr-muted); font-weight: 600; font-size: 0.80rem; letter-spacing: 0.04em; text-transform: uppercase; }
+    nav a:hover { color: var(--clr-accent); }
+    .nav-cta { background: var(--clr-navy) !important; color: #fff !important; padding: 9px 22px; border-radius: 999px; font-weight: 700; font-size: 0.78rem; letter-spacing: 0.06em; }
+    .nav-cta:hover { background: var(--clr-accent) !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { width: 24px; height: 2px; background: var(--clr-navy); border-radius: 2px; }
+
+    /* HERO */
+    #home { padding-top: 130px; padding-bottom: 88px; position: relative; overflow: hidden; }
+    #home::before {
+      content: ''; position: absolute;
+      width: 600px; height: 600px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(201,106,138,0.12) 0%, transparent 70%);
+      top: -120px; right: -160px; pointer-events: none;
+    }
+    #home::after {
+      content: ''; position: absolute;
+      width: 380px; height: 380px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(139,94,126,0.08) 0%, transparent 70%);
+      bottom: -80px; left: -100px; pointer-events: none;
+    }
+
+    .hero-grid { display: grid; grid-template-columns: 1fr auto; gap: 80px; align-items: center; }
+
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--clr-accent-light); color: var(--clr-accent-text);
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 6px 16px; border-radius: 999px; margin-bottom: 22px;
+    }
+    .hero-title { font-family: var(--font-display); font-size: clamp(2.8rem,5.5vw,4.4rem); color: var(--clr-navy); line-height: 1.1; margin-bottom: 24px; font-weight: 500; }
+    .hero-title em { font-style: italic; color: var(--clr-accent); }
+    .hero-desc { color: var(--clr-muted); font-size: 1.05rem; margin-bottom: 36px; max-width: 520px; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 28px; border-radius: 999px;
+      font-weight: 700; font-size: 0.85rem; letter-spacing: 0.02em;
+      transition: all var(--transition); cursor: pointer; border: none; font-family: var(--font-body);
+    }
+    .btn-primary { background: var(--clr-navy); color: #fff; }
+    .btn-primary:hover { background: var(--clr-accent); color: #fff; }
+    .btn-outline { background: transparent; border: 2px solid var(--clr-border); color: var(--clr-navy); }
+    .btn-outline:hover { border-color: var(--clr-accent); color: var(--clr-accent); }
+
+    .hero-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+    .badge {
+      background: var(--clr-card); border: 1px solid var(--clr-border); border-radius: 8px;
+      padding: 7px 14px; font-size: 0.77rem; font-weight: 600; color: var(--clr-muted);
+      display: flex; align-items: center; gap: 6px; box-shadow: var(--shadow);
+    }
+    .badge i { color: var(--clr-accent); font-size: 0.8rem; }
+
+    /* PORTRAIT */
+    .hero-portrait-wrap { display: flex; flex-direction: column; align-items: center; gap: 16px; flex-shrink: 0; }
+
+    .portrait-ring {
+      position: relative;
+      width: 270px; height: 270px; border-radius: 50%;
+      padding: 5px;
+      background: linear-gradient(135deg, var(--clr-accent) 0%, var(--clr-accent-2) 55%, #e8b4c5 100%);
+      box-shadow: 0 16px 56px rgba(201,106,138,0.28);
+    }
+    .portrait-ring img {
+      width: 100%; height: 100%; border-radius: 50%;
+      object-fit: cover; object-position: center top;
+      border: 4px solid var(--clr-bg);
+    }
+    /* fallback if portrait.png not found */
+    .portrait-fallback {
+      width: 100%; height: 100%; border-radius: 50%;
+      background: linear-gradient(135deg, var(--clr-accent), var(--clr-accent-2));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 4rem; border: 4px solid var(--clr-bg);
+    }
+
+    /* Floating stat pills */
+    .portrait-stat {
+      position: absolute;
+      background: var(--clr-card); border: 1px solid var(--clr-border);
+      border-radius: 10px; padding: 8px 14px;
+      font-size: 0.74rem; font-weight: 700; color: var(--clr-navy);
+      box-shadow: var(--shadow); white-space: nowrap;
+    }
+    .portrait-stat .ps-num { display: block; font-family: var(--font-display); font-size: 1.3rem; color: var(--clr-accent); line-height: 1; margin-bottom: 2px; }
+    .ps-tl { top: 12px;  left: -96px; }
+    .ps-tr { top: 12px;  right: -92px; }
+    .ps-bl { bottom: 20px; left: -86px; }
+    .ps-br { bottom: 20px; right: -78px; }
+
+    .portrait-name { text-align: center; }
+    .portrait-name h3 { font-family: var(--font-display); font-size: 1.2rem; color: var(--clr-navy); font-weight: 500; }
+    .portrait-name p { color: var(--clr-accent); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.03em; }
+
+    /* SECTION HEADER */
+    .section-label { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; color: var(--clr-accent); text-transform: uppercase; margin-bottom: 10px; }
+    .section-title { font-family: var(--font-display); font-size: clamp(2rem,4vw,3rem); color: var(--clr-navy); line-height: 1.15; margin-bottom: 14px; font-weight: 500; }
+    .section-desc { color: var(--clr-muted); font-size: 1rem; max-width: 600px; }
+    .section-header { margin-bottom: 52px; }
+
+    /* ABOUT */
+    #about { background: var(--clr-surface); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+    .about-text p { color: var(--clr-muted); margin-bottom: 16px; font-size: 0.97rem; }
+    .highlight-list { list-style: none; margin-top: 24px; display: flex; flex-direction: column; gap: 13px; }
+    .highlight-list li { display: flex; align-items: flex-start; gap: 12px; color: var(--clr-text); font-size: 0.92rem; }
+    .highlight-list li i { color: var(--clr-accent); margin-top: 4px; flex-shrink: 0; }
+
+    .skills-grid { display: flex; flex-direction: column; gap: 18px; }
+    .skill-header { display: flex; justify-content: space-between; margin-bottom: 7px; font-size: 0.84rem; font-weight: 600; color: var(--clr-navy); }
+    .skill-bar { height: 5px; background: var(--clr-border); border-radius: 999px; overflow: hidden; }
+    .skill-fill { height: 100%; background: linear-gradient(90deg, var(--clr-accent), var(--clr-accent-2)); border-radius: 999px; }
+
+    /* EXPERIENCE */
+    .experience-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
+    .col-heading { font-family: var(--font-display); font-size: 1.15rem; font-weight: 500; color: var(--clr-navy); margin-bottom: 28px; padding-bottom: 12px; border-bottom: 2px solid var(--clr-border); }
+    .timeline { position: relative; padding-left: 26px; }
+    .timeline::before { content: ''; position: absolute; left: 6px; top: 0; bottom: 0; width: 1.5px; background: var(--clr-border); }
+    .timeline-item { position: relative; margin-bottom: 38px; }
+    .timeline-dot { position: absolute; left: -22px; top: 7px; width: 12px; height: 12px; border-radius: 50%; background: var(--clr-accent); border: 2px solid var(--clr-bg); }
+    .timeline-dot.d2 { background: var(--clr-accent-2); }
+    .timeline-meta { font-size: 0.76rem; color: var(--clr-accent); font-weight: 700; letter-spacing: 0.04em; margin-bottom: 3px; }
+    .timeline-meta .org { color: var(--clr-muted); font-weight: 600; }
+    .timeline-item h3 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 500; color: var(--clr-navy); margin-bottom: 10px; }
+    .timeline-item ul { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+    .timeline-item ul li { display: flex; align-items: flex-start; gap: 8px; color: var(--clr-muted); font-size: 0.875rem; }
+    .timeline-item ul li::before { content: '›'; color: var(--clr-accent); flex-shrink: 0; }
+
+    .award-card { display: flex; align-items: center; gap: 14px; background: var(--clr-card); border: 1px solid var(--clr-border); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 10px; box-shadow: var(--shadow); }
+    .award-icon { width: 36px; height: 36px; border-radius: 8px; background: var(--clr-accent-light); display: flex; align-items: center; justify-content: center; color: var(--clr-accent); font-size: 0.95rem; flex-shrink: 0; }
+    .award-lbl { font-size: 0.74rem; color: var(--clr-muted); font-weight: 600; margin-bottom: 1px; }
+    .award-val { font-size: 0.88rem; color: var(--clr-navy); font-weight: 600; }
+
+    /* COLLABORATIONS */
+    #collaborations { background: var(--clr-surface); }
+    .collab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; }
+    .collab-card { background: var(--clr-card); border: 1px solid var(--clr-border); border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow); transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition); }
+    .collab-card:hover { transform: translateY(-4px); border-color: var(--clr-accent); box-shadow: var(--shadow-lg); }
+    .collab-icon { width: 48px; height: 48px; border-radius: 12px; background: var(--clr-accent-light); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 16px; }
+    .collab-card h3 { font-family: var(--font-display); font-size: 1.15rem; font-weight: 500; color: var(--clr-navy); margin-bottom: 8px; }
+    .collab-card p { color: var(--clr-muted); font-size: 0.875rem; line-height: 1.7; }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+    .tag { background: var(--clr-accent-light); color: var(--clr-accent-text); font-size: 0.70rem; font-weight: 700; padding: 3px 10px; border-radius: 999px; letter-spacing: 0.03em; }
+
+    /* PUBLICATIONS */
+    .pub-list { display: flex; flex-direction: column; gap: 16px; }
+    .pub-card { background: var(--clr-card); border: 1px solid var(--clr-border); border-radius: var(--radius); padding: 22px 26px; display: flex; gap: 20px; align-items: flex-start; box-shadow: var(--shadow); transition: border-color var(--transition), box-shadow var(--transition); }
+    .pub-card:hover { border-color: var(--clr-accent); box-shadow: var(--shadow-lg); }
+    .pub-num { font-family: var(--font-display); font-size: 1.9rem; color: var(--clr-border); flex-shrink: 0; min-width: 36px; line-height: 1; font-weight: 500; }
+    .pub-journal { font-size: 0.73rem; font-weight: 700; color: var(--clr-accent); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 4px; }
+    .pub-title { font-weight: 600; color: var(--clr-navy); font-size: 0.92rem; margin-bottom: 6px; line-height: 1.55; }
+    .pub-authors { color: var(--clr-muted); font-size: 0.80rem; line-height: 1.5; }
+
+    /* CONTACT */
+    #contact { background: var(--clr-surface); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 60px; align-items: start; }
+    .contact-info { display: flex; flex-direction: column; gap: 14px; }
+    .contact-item { display: flex; align-items: center; gap: 14px; background: var(--clr-card); border: 1px solid var(--clr-border); border-radius: var(--radius); padding: 16px 18px; box-shadow: var(--shadow); }
+    .contact-item .icon { width: 40px; height: 40px; border-radius: 10px; background: var(--clr-accent-light); display: flex; align-items: center; justify-content: center; color: var(--clr-accent); font-size: 1rem; flex-shrink: 0; }
+    .contact-item .lbl { font-size: 0.73rem; color: var(--clr-muted); font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 1px; }
+    .contact-item .val { color: var(--clr-navy); font-size: 0.9rem; font-weight: 500; }
+    .contact-form { display: flex; flex-direction: column; gap: 14px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    label { font-size: 0.78rem; font-weight: 700; color: var(--clr-navy); }
+    input, textarea { background: var(--clr-card); border: 1.5px solid var(--clr-border); border-radius: 9px; padding: 11px 15px; color: var(--clr-text); font-family: var(--font-body); font-size: 0.9rem; outline: none; transition: border-color var(--transition); }
+    input:focus, textarea:focus { border-color: var(--clr-accent); }
+    textarea { resize: vertical; min-height: 120px; }
+
+    /* FOOTER */
+    footer { padding: 32px 0; border-top: 1px solid var(--clr-border); text-align: center; background: var(--clr-bg); }
+    footer p { color: var(--clr-muted); font-size: 0.82rem; }
+    .social-links { display: flex; justify-content: center; gap: 12px; margin-bottom: 16px; }
+    .social-link { width: 40px; height: 40px; border-radius: 50%; background: var(--clr-card); border: 1px solid var(--clr-border); display: flex; align-items: center; justify-content: center; color: var(--clr-muted); font-size: 0.9rem; transition: all var(--transition); }
+    .social-link:hover { border-color: var(--clr-accent); color: var(--clr-accent); background: var(--clr-accent-light); }
+
+    /* REVEAL */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* RESPONSIVE */
+    @media (max-width: 1020px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-portrait-wrap { order: -1; }
+      .portrait-ring { width: 200px; height: 200px; }
+      .portrait-stat { display: none; }
+      .about-grid, .experience-cols, .contact-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      nav ul { display: none; }
+      .hamburger { display: flex; }
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="container">
-    <nav>
-        <div class="logo">G. Balderrama-Gutierrez</div>
-        <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#publications">Publications</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </nav>
-
-    <section class="hero" id="about">
-        <img src="./FunPortrait.png" alt="Gabriela Balderrama-Gutierrez" class="hero-img">
-        <span class="hero-tag">Scientific Strategy | Medical Affairs</span>
-        <h1>Bridging Biology & Strategy.</h1>
-        <p>I lead the translation of complex genomic data into actionable insights for <b>CAR T-cell therapy</b>. With 8+ years of experience in immuno-oncology and a passion for <b>GenAI innovation</b>, I help clinical teams turn data into decisions.</p>
-        <div class="hero-btns">
-            <a href="#publications" class="btn">View Publications</a>
-            <a href="mailto:g.balderrama@live.com" class="btn btn-ghost">Let's Connect</a>
-        </div>
-    </section>
-
-    <section class="section" id="publications">
-        <h2 class="section-title">Peer-Reviewed Papers</h2>
-        <div class="pub-grid">
-            
-            <div class="pub-card">
-                <span class="pub-meta">Blood Advances (2026)</span>
-                <h3>Ibrutinib exposure correlates with improved efficacy of CAR T cells in mantle cell lymphoma.</h3>
-                <p>Strategic analysis of product biology and patient outcomes.</p>
-                <a href="blood_advances_2026.pdf" target="_blank" class="pub-link">Read PDF <i class='bx bx-right-arrow-alt'></i></a>
-            </div>
-
-            <div class="pub-card">
-                <span class="pub-meta">Nature Methods (2024)</span>
-                <h3>Systematic assessment of long-read RNA-seq methods for transcript identification.</h3>
-                <p>Benchmarking methodologies for high-dimensional transcriptomics.</p>
-                <a href="nature_methods_2024.pdf" target="_blank" class="pub-link">Read PDF <i class='bx bx-right-arrow-alt'></i></a>
-            </div>
-
-            <div class="pub-card">
-                <span class="pub-meta">Blood (ASH 2024)</span>
-                <h3>Characterization of axi-cel features associated with treatment resistance.</h3>
-                <p>Identifying clinical biomarkers in r/r LBCL patients.</p>
-                <a href="ash_2024_resistance.pdf" target="_blank" class="pub-link">Read PDF <i class='bx bx-right-arrow-alt'></i></a>
-            </div>
-
-        </div>
-    </section>
-</div>
-
-<footer>
+  <!-- HEADER -->
+  <header>
     <div class="container">
-        <p style="margin-bottom: 20px;">© 2026 Dr. Gabriela Balderrama-Gutierrez</p>
-        <div class="social-links">
-            <a href="https://linkedin.com/in/gbalderrama" target="_blank"><i class='bx bxl-linkedin-square'></i></a>
-            <a href="https://scholar.google.com/citations?user=YOLDb0UAAAAJ" target="_blank"><i class='bx bxl-google'></i></a>
-        </div>
+      <div class="nav-inner">
+        <a href="#home" class="logo">Gaby<span>BG</span></a>
+        <nav>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#collaborations">Collaborations</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#contact" class="nav-cta">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+      </div>
     </div>
-</footer>
+  </header>
+
+  <!-- HERO -->
+  <section id="home">
+    <div class="container">
+      <div class="hero-grid">
+
+        <!-- Text -->
+        <div class="hero-content">
+          <div class="hero-eyebrow"><i class="fa-solid fa-dna"></i> Sr. Research Scientist · CAR-T · GenAI Advocate</div>
+          <h1 class="hero-title">Translating <em>Complex Biology</em><br>into Therapeutic Decisions.</h1>
+          <p class="hero-desc">
+            I'm <strong>Gabriela Balderrama-Gutierrez, PhD</strong> — a bioinformatics scientist at the crossroads of single-cell genomics, CAR-T cell therapy, ENCODE &amp; MODEL-AD consortia, and AI-powered discovery. Based in Southern California.
+          </p>
+          <div class="hero-actions">
+            <a href="#collaborations" class="btn btn-primary"><i class="fa-solid fa-flask"></i> Key Collaborations</a>
+            <a href="https://www.linkedin.com/in/gabybg/" target="_blank" class="btn btn-outline"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+          </div>
+          <div class="hero-badges">
+            <div class="badge"><i class="fa-solid fa-dna"></i> scRNA-seq · ATAC-seq · VDJ-seq</div>
+            <div class="badge"><i class="fa-brands fa-python"></i> Python · R · Bash</div>
+            <div class="badge"><i class="fa-solid fa-robot"></i> GenAI Evangelist</div>
+            <div class="badge"><i class="fa-solid fa-cloud"></i> AWS · HPC · Docker</div>
+          </div>
+        </div>
+
+        <!-- Portrait -->
+        <div class="hero-portrait-wrap reveal">
+          <div class="portrait-ring">
+            <!--
+              IMPORTANT: This image loads from portrait.png at the root of your repo.
+              Make sure you commit the file as: portrait.png (exactly, lowercase)
+            -->
+            <img
+              src="portrait.jpg"
+              alt="Gabriela Balderrama-Gutierrez, PhD"
+              id="portrait-img"
+            >
+            <!-- Floating stats -->
+            <div class="portrait-stat ps-tl"><span class="ps-num">8+</span>Years Comp.</div>
+            <div class="portrait-stat ps-tr"><span class="ps-num">10+</span>Publications</div>
+            <div class="portrait-stat ps-bl"><span class="ps-num">2</span>Consortia</div>
+            <div class="portrait-stat ps-br"><span class="ps-num">3+</span>CAR-T Yrs</div>
+          </div>
+          <div class="portrait-name">
+            <h3>Gabriela Balderrama-Gutierrez</h3>
+            <p>PhD · Kite Pharma (Gilead) · SoCal</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <div class="divider"></div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+
+        <div class="about-text reveal">
+          <span class="section-label">About Me</span>
+          <h2 class="section-title">Scientist. Collaborator.<br><em style="color:var(--clr-accent)">Bridge Builder.</em></h2>
+          <p>I've spent the last five years at the center of CAR-T cell therapy — building the computational tools to understand how these therapies work and translating complex multi-omics data into insights that matter for patients and clinical teams.</p>
+          <p>My career spans academic consortia (ENCODE, MODEL-AD), industry (Kite Pharma / Gilead), and volunteer initiatives (Rare Genomics Institute). I'm passionate about connecting science to strategy and championing responsible AI adoption in biomedical research.</p>
+          <ul class="highlight-list">
+            <li><i class="fa-solid fa-check-circle"></i> Expert in scRNA-seq, scATAC-seq, CITE-seq, VDJ-seq, WES — from library prep to clinical interpretation.</li>
+            <li><i class="fa-solid fa-check-circle"></i> Active GenAI evangelist: evaluating and rolling out LLM-based tools to accelerate lab discovery workflows.</li>
+            <li><i class="fa-solid fa-check-circle"></i> International speaker at ENCODE consortium meetings (Barcelona, Seattle, Asilomar).</li>
+            <li><i class="fa-solid fa-check-circle"></i> Teaching Fellow — Precision Medicine, UC Irvine (3 years).</li>
+          </ul>
+          <div style="margin-top:28px; display:flex; gap:12px; flex-wrap:wrap;">
+            <a href="mailto:g.balderrama@live.com" class="btn btn-primary"><i class="fa-solid fa-envelope"></i> Email Me</a>
+            <a href="https://scholar.google.com/citations?user=YOLDb0UAAAAJ" target="_blank" class="btn btn-outline"><i class="fa-solid fa-graduation-cap"></i> Google Scholar</a>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <span class="section-label">Core Expertise</span>
+          <h3 style="font-family:var(--font-display); color:var(--clr-navy); font-size:1.4rem; font-weight:500; margin-bottom:28px;">Technical Proficiency</h3>
+          <div class="skills-grid">
+            <div><div class="skill-header"><span>Single-Cell Multi-Omics</span><span style="color:var(--clr-accent)">95%</span></div><div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div></div>
+            <div><div class="skill-header"><span>CAR-T / Immuno-Oncology Data Analysis</span><span style="color:var(--clr-accent)">92%</span></div><div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div></div>
+            <div><div class="skill-header"><span>R / Python / Bash · Seurat / Scanpy</span><span style="color:var(--clr-accent)">90%</span></div><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+            <div><div class="skill-header"><span>NGS Pipelines (AWS, Nextflow, HPC)</span><span style="color:var(--clr-accent)">85%</span></div><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+            <div><div class="skill-header"><span>GenAI Tools Evaluation &amp; Adoption</span><span style="color:var(--clr-accent)">88%</span></div><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
+            <div><div class="skill-header"><span>Biostatistics &amp; Clinical Data Interpretation</span><span style="color:var(--clr-accent)">82%</span></div><div class="skill-bar"><div class="skill-fill" style="width:82%"></div></div></div>
+            <div><div class="skill-header"><span>Scientific Communication / Stakeholder Engagement</span><span style="color:var(--clr-accent)">95%</span></div><div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <div class="divider"></div>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Professional Journey</span>
+        <h2 class="section-title">Experience &amp; Education</h2>
+        <p class="section-desc">From academic consortia to industry-leading cell therapy — building the computational bridge between biology and clinical impact.</p>
+      </div>
+      <div class="experience-cols">
+
+        <div class="reveal">
+          <div class="col-heading"><i class="fa-solid fa-briefcase" style="color:var(--clr-accent);margin-right:9px;"></i>Work Experience</div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-meta">Jan 2025 – Present <span class="org">· Kite Pharma (Gilead)</span></div>
+              <h3>Sr. Research Scientist, Bioinformatics &amp; Genomics</h3>
+              <ul>
+                <li>Scientific bridge between computational experts and clinical/regulatory teams for CAR-T therapeutic decisions.</li>
+                <li>Leading GenAI adoption — evaluating and implementing LLM tools to accelerate discovery workflows.</li>
+                <li>Associating CAR-T genomic data with clinical outcomes using biostatistics and ML approaches.</li>
+                <li>Establishing Nextflow &amp; AWS HealthOmics pipelines for WES, PARSE, VDJ-seq pre-processing.</li>
+                <li>Rolled out Benchling LIMS for sequencing core data management.</li>
+                <li>Alternative splicing evaluation for regulatory safety (Nanopore, PacBio).</li>
+              </ul>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-meta">Oct 2022 – Jan 2025 <span class="org">· Kite Pharma (Gilead)</span></div>
+              <h3>Research Scientist, Bioinformatics &amp; Genomics</h3>
+              <ul>
+                <li>Identified single-cell biomarkers of CAR-T treatment success and resistance mechanisms.</li>
+                <li>Built visualization tools enabling clinical colleagues to independently explore genomic data.</li>
+                <li>Contributed to regulatory safety submissions via specialized sequencing.</li>
+              </ul>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot d2"></div>
+              <div class="timeline-meta">Jul 2021 – Oct 2022 <span class="org">· Kite Pharma (Gilead)</span></div>
+              <h3>Sr. Associate Scientist, Bioinformatics &amp; Genomics</h3>
+              <ul>
+                <li>Launched single-cell analysis pipelines for RNA-seq, ATAC-seq, and CITE-seq.</li>
+                <li>Data mining from public databases (TCGA, ICGC) to contextualize therapeutic targets.</li>
+              </ul>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot d2"></div>
+              <div class="timeline-meta">Apr 2025 – Present <span class="org">· Volunteer</span></div>
+              <h3>Project Manager — Rare Genomics Institute</h3>
+              <ul><li>Facilitating patient-centered research services for rare disease genomics.</li></ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <div class="col-heading"><i class="fa-solid fa-graduation-cap" style="color:var(--clr-accent);margin-right:9px;"></i>Education</div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-meta">2017 – 2021 <span class="org">· UC Irvine</span></div>
+              <h3>PhD, Biological Sciences (Transcriptomics)</h3>
+              <ul>
+                <li>Advisor: Prof. Ali Mortazavi. GPA: 3.9. Focus: Alzheimer's disease transcriptomics.</li>
+                <li>Teaching Fellow — Precision Medicine course (3 years).</li>
+                <li>Coordinated multi-omics projects across 4 collaborative labs.</li>
+              </ul>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot d2"></div>
+              <div class="timeline-meta">2013 – 2015 <span class="org">· UACJ, Mexico</span></div>
+              <h3>MSc, Biological Sciences</h3>
+              <ul><li>Thesis: Translocation of Nrf2 in brain stress-sensitive areas after chronic stress.</li></ul>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot d2"></div>
+              <div class="timeline-meta">2013 <span class="org">· UACJ, Mexico</span></div>
+              <h3>BSc, Biology</h3>
+              <ul><li>Thesis: Effects of sleep deprivation on serum cholinesterases.</li></ul>
+            </div>
+          </div>
+
+          <div style="margin-top:36px;">
+            <div class="col-heading"><i class="fa-solid fa-trophy" style="color:var(--clr-accent);margin-right:9px;"></i>Awards &amp; Fellowships</div>
+            <div class="award-card"><div class="award-icon"><i class="fa-solid fa-award"></i></div><div><div class="award-lbl">UC-MEXUS Doctoral Fellowship</div><div class="award-val">~$250,000 · 2016–2021</div></div></div>
+            <div class="award-card"><div class="award-icon"><i class="fa-solid fa-award"></i></div><div><div class="award-lbl">CCBS Opportunity Awards (×2)</div><div class="award-val">$10,000 each · 2019</div></div></div>
+            <div class="award-card"><div class="award-icon"><i class="fa-solid fa-award"></i></div><div><div class="award-lbl">Teaching Excellence &amp; Innovation Fellowship</div><div class="award-val">$5,000 · 2020</div></div></div>
+            <div class="award-card"><div class="award-icon"><i class="fa-solid fa-award"></i></div><div><div class="award-lbl">BMS PhD Student Award</div><div class="award-val">Kite Pharma · Research Excellence</div></div></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <div class="divider"></div>
+
+  <!-- COLLABORATIONS -->
+  <section id="collaborations">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Consortium &amp; Industry Work</span>
+        <h2 class="section-title">Key Collaborations</h2>
+        <p class="section-desc">Proud contributor to landmark consortia and cutting-edge cell therapy research, working at the interface of genomics, AI, and clinical translation.</p>
+      </div>
+      <div class="collab-grid">
+
+        <div class="collab-card reveal">
+          <div class="collab-icon">🧬</div>
+          <h3>ENCODE Consortium — Phase 4</h3>
+          <p>Led bioinformatics analysis of long-read RNA-seq data, validated the long-read transcriptome pipeline, and presented at international ENCODE meetings in <strong>Barcelona</strong>, <strong>Seattle</strong>, and <strong>Asilomar, CA</strong> (Mortazavi Lab, UCI).</p>
+          <div class="tag-row"><span class="tag">Long-read RNA-seq</span><span class="tag">PacBio · Nanopore</span><span class="tag">Transcript Discovery</span><span class="tag">Int'l Talks</span></div>
+        </div>
+
+        <div class="collab-card reveal">
+          <div class="collab-icon">🧠</div>
+          <h3>MODEL-AD — Bioinformatics Data Management Core</h3>
+          <p>Bioinformatics Data Management Core member (2019–2021) for the multi-institution Alzheimer's mouse model consortium. Standardized single-cell protocols, set up analysis pipelines, and submitted datasets to SAGE Bionetworks.</p>
+          <div class="tag-row"><span class="tag">Alzheimer's Disease</span><span class="tag">scRNA-seq</span><span class="tag">SAGE Bionetworks</span><span class="tag">Mouse Models</span></div>
+        </div>
+
+        <div class="collab-card reveal">
+          <div class="collab-icon">🔬</div>
+          <h3>CAR-T Cell Therapy — Kite Pharma (Gilead)</h3>
+          <p>3+ years of embedded bioinformatics in the CAR-T space — from single-cell genomics of CAR-T products to associating genomic features with clinical outcomes. Co-authored a 2026 <em>Blood Advances</em> study on ibrutinib + CAR-T in mantle cell lymphoma.</p>
+          <div class="tag-row"><span class="tag">CAR-T Genomics</span><span class="tag">Clinical Outcomes</span><span class="tag">VDJ-seq</span><span class="tag">Mantle Cell Lymphoma</span></div>
+        </div>
+
+        <div class="collab-card reveal">
+          <div class="collab-icon">🤖</div>
+          <h3>GenAI Evangelism &amp; AI Adoption</h3>
+          <p>Internal champion for responsible AI at Kite Pharma — evaluating GenAI platforms, piloting agentic tools for genomic data extraction, and guiding lab teams in adopting AI to accelerate research workflows.</p>
+          <div class="tag-row"><span class="tag">LLM Evaluation</span><span class="tag">Agentic Workflows</span><span class="tag">AI in Biopharma</span><span class="tag">R&amp;D Efficiency</span></div>
+        </div>
+
+        <div class="collab-card reveal">
+          <div class="collab-icon">🦌</div>
+          <h3>Barbour Lab — Lyme Disease Reservoir (UCI)</h3>
+          <p>Multi-omics evaluation of <em>Peromyscus leucopus</em>. Contributed transcriptomic and metabolomic analysis revealing how this infection-tolerant mammal counters endotoxin-driven inflammation. Published in <em>mBio</em>.</p>
+          <div class="tag-row"><span class="tag">Transcriptomics</span><span class="tag">Metabolomics</span><span class="tag">Zoonotic Disease</span></div>
+        </div>
+
+        <div class="collab-card reveal">
+          <div class="collab-icon">💊</div>
+          <h3>Tenner &amp; Prescher Labs (UCI)</h3>
+          <p>Drug effects on microglia/astrocytes in Alzheimer's mouse models via scRNA-seq (Tenner Lab). Transcriptomic plasticity of metastatic breast cancer cells using spatially restricted metabolic labeling (Prescher/Spitale Labs).</p>
+          <div class="tag-row"><span class="tag">Neurodegeneration</span><span class="tag">Microglia · Astrocytes</span><span class="tag">Breast Cancer</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <div class="divider"></div>
+
+  <!-- PUBLICATIONS -->
+  <section id="publications">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Research Output</span>
+        <h2 class="section-title">Selected Publications</h2>
+        <p class="section-desc">10+ peer-reviewed works spanning CAR-T therapy, transcriptomics, long-read sequencing, and infectious disease. <a href="https://scholar.google.com/citations?user=YOLDb0UAAAAJ" target="_blank" style="font-weight:700;">Full list on Google Scholar →</a></p>
+      </div>
+      <div class="pub-list">
+
+        <div class="pub-card reveal">
+          <div class="pub-num">01</div>
+          <div><div class="pub-journal">Blood Advances · 2026</div><div class="pub-title">Ibrutinib exposure correlates with improved efficacy of CAR T cells in patients with mantle cell lymphoma</div><div class="pub-authors">Darnell EP, Gallagher KME, Kanska J, Scarfò I, <strong>Balderrama-Gutierrez G</strong>, Berger TR, et al. · doi: 10.1182/bloodadvances.2025018137</div></div>
+        </div>
+
+        <div class="pub-card reveal">
+          <div class="pub-num">02</div>
+          <div><div class="pub-journal">Nature Methods · 2024</div><div class="pub-title">Systematic assessment of long-read RNA-seq methods for transcript identification and quantification</div><div class="pub-authors">Co-author with the ENCODE Long-Read RNA-seq Consortium</div></div>
+        </div>
+
+        <div class="pub-card reveal">
+          <div class="pub-num">03</div>
+          <div><div class="pub-journal">Blood (ASH) · 2024</div><div class="pub-title">Characterization of axicabtagene ciloleucel features associated with treatment resistance in LBCL</div><div class="pub-authors">Co-author, Kite Pharma Bioinformatics Group</div></div>
+        </div>
+
+        <div class="pub-card reveal">
+          <div class="pub-num">04</div>
+          <div><div class="pub-journal">mBio (ASM) · 2021</div><div class="pub-title">The infection-tolerant mammalian reservoir of Lyme disease and other zoonoses broadly counters the inflammatory effects of endotoxin</div><div class="pub-authors"><strong>Balderrama-Gutierrez G</strong>, Milovic A, Cook VJ, Islam MN, Zhang Y, Kiaris H, Belisle JT, Mortazavi A, Barbour AG · 10.1128/mBio.00588-21</div></div>
+        </div>
+
+        <div class="pub-card reveal">
+          <div class="pub-num">05</div>
+          <div><div class="pub-journal">BioRxiv / ENCODE · 2019</div><div class="pub-title">A technology-agnostic long-read analysis pipeline for transcriptome discovery and quantification</div><div class="pub-authors">Wyman D*, <strong>Balderrama-Gutierrez G*</strong>, Reese F, Jiang S, Rahmanian S, Zeng W, Mortazavi A · Co-first author · doi: 10.1101/672931</div></div>
+        </div>
+
+        <div class="pub-card reveal">
+          <div class="pub-num">06</div>
+          <div><div class="pub-journal">ACS Chemical Biology · 2018</div><div class="pub-title">Spatially Restricting Bioorthogonal Nucleoside Biosynthesis Enables Selective Metabolic Labeling of the Mitochondrial Transcriptome</div><div class="pub-authors">Nguyen K, Aggarwal MB, Feng C, <strong>Balderrama G</strong>, Fazio M, Mortazavi A, Spitale RC · doi: 10.1021/acschembio.8b00262</div></div>
+        </div>
+
+        <div class="pub-card reveal" style="border-style:dashed; background:var(--clr-surface);">
+          <div class="pub-num" style="color:var(--clr-accent-light);">+4</div>
+          <div><div class="pub-journal">Additional Publications</div><div class="pub-title">Including works on Peromyscus leucopus genome, Long-TUC-seq methodology, Alzheimer's disease models, and metastatic breast cancer transcriptomics.</div><div class="pub-authors"><a href="https://scholar.google.com/citations?user=YOLDb0UAAAAJ" target="_blank" style="font-weight:700;">View all 10+ publications on Google Scholar →</a></div></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <div class="divider"></div>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header reveal" style="text-align:center; max-width:580px; margin:0 auto 52px;">
+        <span class="section-label">Get In Touch</span>
+        <h2 class="section-title">Let's Work Together</h2>
+        <p class="section-desc">Whether you're interested in scientific collaboration, medical affairs opportunities, or discussing GenAI in biopharma — I'd love to connect.</p>
+      </div>
+      <div class="contact-grid">
+
+        <div class="contact-info reveal">
+          <div class="contact-item"><div class="icon"><i class="fa-solid fa-envelope"></i></div><div><div class="lbl">Email</div><div class="val"><a href="mailto:g.balderrama@live.com">g.balderrama@live.com</a></div></div></div>
+          <div class="contact-item"><div class="icon"><i class="fa-solid fa-phone"></i></div><div><div class="lbl">Phone</div><div class="val"><a href="tel:+19496077506">(949) 607-7506</a></div></div></div>
+          <div class="contact-item"><div class="icon"><i class="fa-brands fa-linkedin"></i></div><div><div class="lbl">LinkedIn</div><div class="val"><a href="https://www.linkedin.com/in/gabybg/" target="_blank">linkedin.com/in/gabybg</a></div></div></div>
+          <div class="contact-item"><div class="icon"><i class="fa-solid fa-graduation-cap"></i></div><div><div class="lbl">Google Scholar</div><div class="val"><a href="https://scholar.google.com/citations?user=YOLDb0UAAAAJ" target="_blank">View Publications</a></div></div></div>
+          <div class="contact-item"><div class="icon"><i class="fa-solid fa-location-dot"></i></div><div><div class="lbl">Location</div><div class="val">Southern California, USA</div></div></div>
+        </div>
+
+        <div class="contact-form reveal">
+          <div class="form-row">
+            <div class="form-group"><label for="name">Your Name</label><input type="text" id="name" placeholder="Jane Smith"></div>
+            <div class="form-group"><label for="email">Your Email</label><input type="email" id="email" placeholder="jane@company.com"></div>
+          </div>
+          <div class="form-group"><label for="subject">Subject</label><input type="text" id="subject" placeholder="Collaboration / Opportunity / Question"></div>
+          <div class="form-group"><label for="message">Message</label><textarea id="message" placeholder="Tell me about your project or opportunity..."></textarea></div>
+          <!-- Replace onclick with a real Formspree form action to enable email delivery -->
+          <button class="btn btn-primary" onclick="alert('Wire this button to Formspree (https://formspree.io) — free and takes 5 minutes.')">
+            <i class="fa-solid fa-paper-plane"></i> Send Message
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/gabybg/" target="_blank" class="social-link" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://scholar.google.com/citations?user=YOLDb0UAAAAJ" target="_blank" class="social-link" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
+        <a href="mailto:g.balderrama@live.com" class="social-link" title="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+      <p>© 2025 Gabriela Balderrama-Gutierrez, PhD &nbsp;·&nbsp; Template inspired by <a href="https://github.com/codewithsadee/julia-portfolio" target="_blank">julia-portfolio by codewithsadee</a>.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.08 });
+    reveals.forEach(el => obs.observe(el));
+
+    // Graceful portrait fallback
+    const img = document.getElementById('portrait-img');
+    if (img) {
+      img.onerror = function() {
+        const ring = img.parentElement;
+        img.remove();
+        const fb = document.createElement('div');
+        fb.className = 'portrait-fallback';
+        fb.textContent = '🧬';
+        ring.prepend(fb);
+      };
+    }
+
+    // Mobile nav
+    let navOpen = false;
+    document.getElementById('hamburger').addEventListener('click', () => {
+      navOpen = !navOpen;
+      const ul = document.querySelector('nav ul');
+      ul.style.cssText = navOpen
+        ? 'display:flex;flex-direction:column;position:fixed;top:60px;left:0;right:0;background:#faf8f5;padding:28px 5%;gap:20px;border-bottom:1px solid #e4d9d0;z-index:99;'
+        : 'display:none;';
+    });
+  </script>
 
 </body>
 </html>
